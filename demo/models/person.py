@@ -1,9 +1,9 @@
 from demo.interface.personInterface import PersonI
 from demo.models.logger import Log
-
+from demo import setting
 
 # create a logger for Person object
-plogger = Log(__name__, "info", "demo_project.log")
+plogger = Log(__name__, "info", setting.logfile)
 
 
 class Person(PersonI):
