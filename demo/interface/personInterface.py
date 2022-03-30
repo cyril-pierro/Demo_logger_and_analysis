@@ -2,7 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class PersonI(ABC):
-    """Person Interface"""
+    """
+    Person Interface class
+    """
 
     @abstractmethod
     def display(self):
