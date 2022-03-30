@@ -1,9 +1,7 @@
 from demo.models.person import Person
 import unittest
 
-"""
-Unit Test Code 
-"""
+"""Unit Test Code for Person Class"""
 
 
 class TestPerson(unittest.TestCase):

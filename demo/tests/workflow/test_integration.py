@@ -3,10 +3,8 @@ from demo.models.person import Person
 import unittest
 
 
-class TestWorkflow(unittest.TestCase):
-    """
-    Test for Workflow
-     """
+class TestIntegration(unittest.TestCase):
+    """Integration Test of Workflow"""
 
     def setUp(self):
         self.tester = Person("Tester", "Integration")
