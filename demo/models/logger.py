@@ -3,7 +3,11 @@ from typing import Dict
 
 
 class Log:
+    """
+    Log class for Managing logs in Project
+    """
 
+    # Log Level Storage
     __level_category: Dict = {
         "debug": logging.DEBUG,
         "info": logging.INFO,
@@ -13,6 +17,13 @@ class Log:
     }
 
     def __init__(self, name, level: str, filename: str):
+        """
+        Constructor for log class
+        @param name: str
+        @param level: str
+        @filename: str
+        :return: None
+        """
 
         self.__format = logging.Formatter(
             "%(levelname)s: %(name)s: %(message)s: %(asctime)s", "%Y-%m-%d %H:%M:%S")
@@ -23,16 +34,41 @@ class Log:
         self.__logger.addHandler(self.__file_handler)
 
     def debug(self, message):
+        """
+        Debug method logs debug messages to log file
+        @param message: str
+        :return: None
+        """
         self.__logger.debug(message)
 
     def info(self, message):
+        """
+        Info method logs info messages to log file
+        @param message: str
+        :return: None
+        """
         self.__logger.info(message)
 
     def error(self, message):
+        """
+        Error method logs error messages to log file
+        @param message: str
+        :return: None
+        """
         self.__logger.error(message)
 
     def critical(self, message):
+        """
+        Critical method logs critical messages to log file
+        @param message: str
+        :return: None
+        """
         self.__logger.critical(message)
 
     def exception(self, message):
+        """
+        Exception method logs exception messages to log file
+        @param message: str
+        :return: None
+        """
         self.__logger.exception(message)
