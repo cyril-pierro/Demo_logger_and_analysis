@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>demo.tests.workflow.test_integration &mdash; Demo_logger_and_analysis 1.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Demo_logger_and_analysis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../demo.interface.html">demo.interface package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../demo.models.html">demo.models package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../demo.tests.html">demo.tests package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Demo_logger_and_analysis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      <li>demo.tests.workflow.test_integration</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for demo.tests.workflow.test_integration</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">demo.models.store</span> <span class="kn">import</span> <span class="n">Store</span>
+<span class="kn">from</span> <span class="nn">demo.models.person</span> <span class="kn">import</span> <span class="n">Person</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+
+
+<div class="viewcode-block" id="TestIntegration"><a class="viewcode-back" href="../../../../demo.tests.workflow.html#demo.tests.workflow.test_integration.TestIntegration">[docs]</a><span class="k">class</span> <span class="nc">TestIntegration</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Integration Test of Workflow&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TestIntegration.setUp"><a class="viewcode-back" href="../../../../demo.tests.workflow.html#demo.tests.workflow.test_integration.TestIntegration.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tester</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Tester&quot;</span><span class="p">,</span> <span class="s2">&quot;Integration&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span> <span class="o">=</span> <span class="n">Store</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestIntegration.test_worflow"><a class="viewcode-back" href="../../../../demo.tests.workflow.html#demo.tests.workflow.test_integration.TestIntegration.test_worflow">[docs]</a>    <span class="k">def</span> <span class="nf">test_worflow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">get_product_value</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">get_product_value</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">get_product_value</span><span class="p">(</span><span class="s2">&quot;soap&quot;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="n">store_workflow_products</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;soap&quot;</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertDictEqual</span><span class="p">(</span><span class="n">store_workflow_products</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span><span class="o">.</span><span class="n">show_case</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestIntegration.tearDown"><a class="viewcode-back" href="../../../../demo.tests.workflow.html#demo.tests.workflow.test_integration.TestIntegration.tearDown">[docs]</a>    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_workflow</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tester</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Cyril Pierro.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
