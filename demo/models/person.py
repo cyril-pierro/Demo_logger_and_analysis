@@ -7,13 +7,15 @@ plogger = Log(__name__, "info", setting.logfile)
 
 
 class Person(PersonI):
-    """Person Class"""
+    """
+    Person Class
+    """
 
     def __init__(self, first: str, second: str = ""):
         """
         @param first: str
         @param second: str
-        return None
+        :return None
         """
         self.first = first
         self.second = second
@@ -21,10 +23,14 @@ class Person(PersonI):
 
     @property
     def email(self):
-        """Email structure for Person Class"""
+        """
+        Email structure for Person Class
+        """
         return f"{self.first}.{self.second}@email.com"
 
     @property
     def display(self):
-        """Structure to display Person Class"""
+        """
+        Structure to display Person Class
+        """
         return f"{self.first} {self.second}"
