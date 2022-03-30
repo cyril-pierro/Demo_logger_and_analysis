@@ -5,7 +5,7 @@ kofi = Person("kofi", "first")
 store = Store(kofi)
 
 product_message = "Enter product name "
-price_message = "Enter price of Product "
+price_message = "Enter amount of Product "
 
 while True:
     result = input("command : ")
