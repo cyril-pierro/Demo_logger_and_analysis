@@ -10,7 +10,7 @@ def error_decorator(function):
     """
     Wrapper for Error Messages
     @param function: Takes in a the function to decorate
-    :return function
+    :return: Function
     """
     def inner(*args, **kwargs):
 
@@ -39,7 +39,7 @@ class Store(StoreI):
         @param person: Object
         @param product_name: str
         @param product_amount: int
-        :return None
+        :return: None
         """
         # Required parameter when creating a Store
         self.person = person
@@ -57,7 +57,7 @@ class Store(StoreI):
         Buy method addes an amount to a product store
         @param product_name:str 
         @param amount: int
-        :return None
+        :return: None
         """
 
         value = self.__products.get(product_name)
@@ -72,7 +72,7 @@ class Store(StoreI):
         Sell method subtracts an amount from a product store
         @param product_name: str
         @param amount: int
-        :return None
+        :return: None
         """
         value = self.__products.get(product_name)
         self.__products[product_name] = value - amount
@@ -82,7 +82,7 @@ class Store(StoreI):
         """
         Get Product Value method returns an amount of a product name
         @param product_name: 
-        :return Integer
+        :return: Integer
         """
         return self.__products.get(product_name)
 
@@ -91,7 +91,7 @@ class Store(StoreI):
         Add method addes a new Product details to store
         @param product_name: str
         @param amount: int
-        :return None
+        :return: None
         """
         if product_name not in self.__products:
             plogger.info(f"New Product {product_name} added to inventory")
@@ -106,6 +106,6 @@ class Store(StoreI):
         Show case method displays the available products in store
         @param product_name: str
         @param amount: str
-        :return None
+        :return: None
         """
         return self.__products

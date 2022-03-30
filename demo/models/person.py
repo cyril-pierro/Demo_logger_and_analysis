@@ -15,7 +15,7 @@ class Person(PersonI):
         """
         @param first: str
         @param second: str
-        :return None
+        :return: None
         """
         self.first = first
         self.second = second
@@ -25,6 +25,7 @@ class Person(PersonI):
     def email(self):
         """
         Email structure for Person Class
+        :return: Str
         """
         return f"{self.first}.{self.second}@email.com"
 
@@ -32,5 +33,6 @@ class Person(PersonI):
     def display(self):
         """
         Structure to display Person Class
+        :return: Str
         """
         return f"{self.first} {self.second}"
