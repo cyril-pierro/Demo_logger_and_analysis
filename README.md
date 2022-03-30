@@ -1,4 +1,4 @@
-# Demo logger and test workflow
+# Demo logger and Analysis
 Demonstration on 
 - how to log applications
 - how to perform both unit and workflow testing
