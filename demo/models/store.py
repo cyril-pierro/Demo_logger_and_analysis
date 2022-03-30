@@ -29,16 +29,16 @@ class Store(StoreI):
     # Storage of all products stored by a user
     __products: Dict = {}
 
-    def __init__(self, person: Person, product_name: str = None, product_value: int = None):
+    def __init__(self, person: Person, product_name: str = None, product_amount: int = None):
 
         # Required parameter when creating a Store
         self.person = person
 
         # Custom Validation
-        if product_name is not None and product_value is not None:
-            self.__products[product_name] = product_value
+        if product_name is not None and product_amount is not None:
+            self.__products[product_name] = product_amount
             plogger.info(
-                f"Product Created - Name: {product_name} Value: {product_value}")
+                f"Product Created - Name: {product_name} Value: {product_amount}")
 
     @error_decorator
     def buy(self, product_name: str, amount: int):
@@ -56,10 +56,10 @@ class Store(StoreI):
     def get_product_value(self, product_name: str):
         return self.__products.get(product_name)
 
-    def add(self, product_name: str, product_value: int):
+    def add(self, product_name: str, product_amount: int):
         if product_name not in self.__products:
             plogger.info(f"New Product {product_name} added to inventory")
-            self.__products[product_name] = product_value
+            self.__products[product_name] = product_amount
         else:
             plogger.error(f"Product {product_name} already exists")
             raise ValueError(f"Product {product_name} already exists")
