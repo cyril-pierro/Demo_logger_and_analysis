@@ -8,4 +8,6 @@ class PersonI(ABC):
 
     @abstractmethod
     def display(self):
-        """Display Name"""
+        """
+        Display Name method
+        """
